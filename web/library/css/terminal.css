@@ -1,0 +1,26 @@
+pre{
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #bbbbbb !important;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #2b2b2b !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+#blinkingCursor{
+    font-weight: 600;
+    color: white !important;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
