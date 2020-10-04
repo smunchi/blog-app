@@ -37,16 +37,8 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
             ['label' => 'Post', 'icon' => 'list', 'url' => ['/blog-post/index'], 'activateParents' => false],
             ['label' => 'Category', 'icon' => 'list', 'url' => ['/blog-category/index'], 'activateParents' => false],
-            ['label' => 'Tags', 'icon' => 'list', 'url' => ['/blog-tags/index'], 'activateParents' => false],
-            ['label' => 'Continent', 'icon' => 'list', 'url' => ['/blog-continent/index'], 'activateParents' => false],
-            ['label' => 'Country', 'icon' => 'list', 'url' => ['/blog-country/index'], 'activateParents' => false],
-            ['label' => 'City', 'icon' => 'list', 'url' => ['/blog-city/index'], 'activateParents' => false],
-            ['label' => 'Bookings', 'icon' => 'list', 'url' => ['/blog-bookings/index'], 'activateParents' => false],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
