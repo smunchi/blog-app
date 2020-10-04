@@ -124,13 +124,8 @@ if (empty($model->author_name)) {
                         "insertdatetime media image table contextmenu paste autoresize",
                         "emoticons"
                     ],
-                    'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image flightto hotelto packageto",
+                    'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image",
                     'branding' => false, // To show or not who powered (TinyMCE label)
-                    'external_plugins' => [
-                        'flightto' => '/library/js/tinymce.plugin.js',
-                        'hotelto' => '/library/js/tinymce.plugin.js',
-                        'packageto' => '/library/js/tinymce.plugin.js'
-                    ],
                     'resize' => 'both',
                     'file_picker_callback' => new JsExpression('uploadFile')
                 ]
@@ -138,15 +133,7 @@ if (empty($model->author_name)) {
             <input type='file' name='fileupload' id='fileupload' style='display: none;'>
         </div>
     </div>
-    <?php
-    echo $this->render('_flight_modal');
-    echo $this->render('_hotel_modal');
-    echo $this->render('_package_modal');
-    ?>
     <div class="row">
-        <div class="col-md-6">
-            <?= $form->field($model, 'type')->dropDownList(['regular' => 'Regular', 'featured' => 'Featured', 'trending' => 'Trending'], ['prompt' => '']) ?>
-        </div>
         <div class="col-md-6">
             <?= $form->field($model, 'category_id')->dropDownList(
                 \yii\helpers\ArrayHelper::map(\app\models\BlogCategory::find()->all(), 'id', 'name'),

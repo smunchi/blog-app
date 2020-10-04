@@ -19,7 +19,6 @@ use yii\behaviors\SluggableBehavior;
  * @property string $featured_image
  * @property int $category_id
  * @property int $views
- * @property string $type
  * @property string $meta_title
  * @property string $meta_description
  * @property string $meta_keywords
@@ -48,11 +47,11 @@ class BlogPost extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'author_name', 'content', 'category_id', 'type'], 'required'],
+            [['title', 'author_name', 'content', 'category_id'], 'required'],
             ['title', 'unique', 'targetClass' => BlogPost::class, 'message' => 'This title has already been taken.'],
             [['content', 'meta_title', 'meta_description', 'meta_keywords', 'code'], 'string'],
             [['upload_image'], 'file', 'extensions' => 'png, jpg, jpeg', 'skipOnEmpty' => true],
-            [['views', 'created_by', 'updated_by'], 'integer'],
+            [['created_by', 'updated_by'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             ['meta_keywords', 'match', 'pattern'=>'/^\w+(?:(?:,\s\w+)+|(?:,\w+)+|(?:\w+))$/', 'message'=>"{attribute} is Invalid."],
             [['title', 'slug', 'sub_title', 'author_name', 'featured_image'], 'string', 'max' => 255],
@@ -74,8 +73,6 @@ class BlogPost extends \yii\db\ActiveRecord
             'author_name' => Yii::t('app', 'Author Name'),
             'featured_image' => Yii::t('app', 'Featured Image'),
             'category_id' => Yii::t('app', 'Category'),
-            'views' => Yii::t('app', 'Views'),
-            'type' => Yii::t('app', 'Type'),
             'meta_title' => Yii::t('app', 'Meta Title'),
             'meta_description' => Yii::t('app', 'Meta Description'),
             'meta_keywords' => Yii::t('app', 'Meta Keywords'),
