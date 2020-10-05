@@ -10,7 +10,6 @@ use yii\behaviors\SluggableBehavior;
  *
  * @property int $id
  * @property string $name
- * @property string $img_src
  * @property int $created_by
  * @property int $updated_by
  * @property string $created_at
@@ -18,8 +17,6 @@ use yii\behaviors\SluggableBehavior;
  */
 class BlogCategory extends \yii\db\ActiveRecord
 {
-    public $upload_image;
-    public $existing_upload_image;
 
     /**
      * {@inheritdoc}
@@ -51,7 +48,6 @@ class BlogCategory extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
-            'img_src' => Yii::t('app', 'Image'),
             'created_by' => Yii::t('app', 'Created By'),
             'updated_by' => Yii::t('app', 'Updated By'),
             'created_at' => Yii::t('app', 'Created At'),

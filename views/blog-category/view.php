@@ -31,14 +31,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'name',
-            [
-                'attribute' => 'img_src',
-                'format' => 'html',
-                'label' => 'Image',
-                'value' => function ($data) {
-                    return Html::img($data['img_src']);
-                },
-            ],
             'created_at'
         ],
     ]) ?>
