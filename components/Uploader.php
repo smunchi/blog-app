@@ -2,11 +2,7 @@
 
 namespace app\components;
 
-use app\models\Options;
 use Yii;
-use Imagine\Gd;
-use Imagine\Image\Box;
-use yii\helpers\Json;
 
 class Uploader
 {

@@ -2,11 +2,7 @@
 
 namespace app\components;
 
-use common\modules\leninhasda\options\models\Options;
-use DateTime;
-use DateTimeZone;
 use Yii;
-use yii\web\Response;
 
 class Utils
 {
@@ -111,21 +107,6 @@ class Utils
         }
 
         return $isValid;
-    }
-
-    /**
-     * return sql date time
-     * @param null $time
-     * @return string
-     */
-    public static function humanDate($time = null)
-    {
-        return self::date('F d, Y', $time);
-    }
-
-    public static function uniqueCode($limit)
-    {
-        return substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, $limit);
     }
 
     public static function encrypt($data)

@@ -4,8 +4,6 @@ namespace app\controllers;
 
 use app\components\Uploader;
 use app\components\Utils;
-use app\models\BlogCity;
-use app\models\BlogCountry;
 use app\models\BlogPostTags;
 use app\models\BlogTags;
 use Yii;
