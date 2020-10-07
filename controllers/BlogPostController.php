@@ -125,7 +125,7 @@ class BlogPostController extends Controller
     public function actionUploadFile()
     {
         $uploadedFile = UploadedFile::getInstanceByName('file');
-        echo Uploader::processBlogImage($uploadedFile, 'uploads/tinymce-files/', true);
+        echo Uploader::processImage($uploadedFile, 'uploads/tinymce-files/', true);
     }
 
     /**
@@ -184,7 +184,7 @@ class BlogPostController extends Controller
     private function uploadFiles($model, $request)
     {
         if ($imgSrc = UploadedFile::getInstance($model, 'upload_image')) {
-            $model->featured_image = Uploader::processBlogImage($imgSrc, 'uploads/featured_images/', true);
+            $model->featured_image = Uploader::processImage($imgSrc, 'uploads/featured_images/', true);
         } else if(empty($request['BlogPost']['existing_upload_image'])) {
             $model->featured_image = null;
         }
